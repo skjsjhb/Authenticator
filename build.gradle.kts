@@ -24,11 +24,13 @@ repositories {
 
 application {
     mainClass = mainClazz
-    applicationDefaultJvmArgs = listOf(
-        "--add-opens java.desktop/sun.awt=ALL-UNNAMED",
-        "--add-opens java.desktop/sun.lwawt=ALL-UNNAMED",
-        "--add-opens java.desktop/sun.lwawt.macosx=ALL-UNNAMED"
-    )
+    if (System.getProperty("os.name").lowercase().contains("mac")) {
+        applicationDefaultJvmArgs = listOf(
+            "--add-opens=java.desktop/sun.awt=ALL-UNNAMED",
+            "--add-opens=java.desktop/sun.lwawt=ALL-UNNAMED",
+            "--add-opens=java.desktop/sun.lwawt.macosx=ALL-UNNAMED"
+        )
+    }
 }
 
 dependencies {
