@@ -63,6 +63,16 @@ cp.exec(`java -jar /path/to/authenticator.jar myCacheId`, (_, stdout) => {
 });
 ```
 
+## Building
+
+This project is a standard Gradle Java project. Generate a fat JAR using:
+
+```
+./gradlew jar
+```
+
+And the JAR file is placed under `build/libs`.
+
 ## License and Disclaimer
 
 ![WTFPL](http://www.wtfpl.net/wp-content/uploads/2012/12/wtfpl-badge-4.png)
